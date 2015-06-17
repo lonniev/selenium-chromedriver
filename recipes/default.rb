@@ -20,6 +20,25 @@
 chef_gem "selenium-webdriver" 
 chef_gem "chromedriver-helper"
 
-ark "chromedriver.exe" do
-  url "http://chromedriver.storage.googleapis.com/2.15/chromedriver_win32.zip"
+chefPath = Pathname( "/opscode/chef/embedded/bin" ).realpath()
+zipFile = "chromedriver_win32.zip"
+tmpPath = Pathname( "/tmp" )
+chromeZip = Pathname( tmpPath ).join( zipFile )
+
+remote_file zipFile.to_s do
+  action :create_if_missing
+  notifies :run, 'execute[unzip ChromeDriver]'
+
+  source "http://chromedriver.storage.googleapis.com/2.15/#{zipFile}"
+  path tmpPath.to_s
+end
+
+# unzip the ChromeDriver Bundle
+
+execute "unzip ChromeDriver" do
+  action :nothing
+  cwd chefPath.to_s
+ 
+  command "C:\Program Files\7-Zip\7z.exe -y #{chromeZip}"
+  only_if { chromeZip.exist?() }
 end
