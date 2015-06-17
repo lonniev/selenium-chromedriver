@@ -25,20 +25,14 @@ zipFile = "chromedriver_win32.zip"
 tmpPath = Pathname( "/tmp" )
 chromeZip = Pathname( tmpPath ).join( zipFile )
 
-remote_file zipFile.to_s do
-  action :create_if_missing
-  notifies :run, 'execute[unzip ChromeDriver]'
-
+# unzip the ChromeDriver Bundle
+windows_zipfile chefPath.to_s do
   source "http://chromedriver.storage.googleapis.com/2.15/#{zipFile}"
-  path chromeZip.to_s
+  action :unzip
+  
+  not_if { chefPath.join( "chromedriver.exe" ).exist?() }
 end
 
-# unzip the ChromeDriver Bundle
-
-execute "unzip ChromeDriver" do
-  action :nothing
-  cwd chefPath.to_s
- 
-  command "& 'C:\\Program Files\\7-Zip\\7z.exe' x -y #{chromeZip}"
-  only_if { chromeZip.exist?() }
+windows_path chefPath.to_s do
+  action :add
 end
