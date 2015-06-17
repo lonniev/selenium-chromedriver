@@ -39,6 +39,6 @@ execute "unzip ChromeDriver" do
   action :nothing
   cwd chefPath.to_s
  
-  command "C:\Program Files\7-Zip\7z.exe -y #{chromeZip}"
+  command "'C:\\Program Files\\7-Zip\\7z.exe' -y #{chromeZip}"
   only_if { chromeZip.exist?() }
 end
