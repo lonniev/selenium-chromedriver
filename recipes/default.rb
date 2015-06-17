@@ -30,7 +30,7 @@ remote_file zipFile.to_s do
   notifies :run, 'execute[unzip ChromeDriver]'
 
   source "http://chromedriver.storage.googleapis.com/2.15/#{zipFile}"
-  path tmpPath.to_s
+  path chromeZip.to_s
 end
 
 # unzip the ChromeDriver Bundle
