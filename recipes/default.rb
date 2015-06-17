@@ -19,3 +19,7 @@
 
 chef_gem "selenium-webdriver" 
 chef_gem "chromedriver-helper"
+
+ark "chromedriver.exe" do
+  url "http://chromedriver.storage.googleapis.com/2.15/chromedriver_win32.zip"
+end
