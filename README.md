@@ -1,6 +1,6 @@
-chocolatey-chrome Cookbook
+selenium-chromedriver Cookbook
 =============
-Installs Google Chrome using Chocolatey into the virtual machine
+Installs the Selenium Webdriver and Chromedriver into the virtual machine
 
 Attributes
 ----------
@@ -9,7 +9,7 @@ Attributes
 Usage
 -----
 
-Include chef.add_recipe "chocolatey-chrome" to your Vagrantfile.
+Include chef.add_recipe "selenium-chromedriver" to your Vagrantfile.
 
 Contributing
 ------------

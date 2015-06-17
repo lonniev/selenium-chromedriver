@@ -1,11 +1,11 @@
-chocolatey-chrome CHANGELOG
+selenium-chromedriver CHANGELOG
 ==============
 
-This file is used to list changes made in each version of the chocolatey-chrome cookbook.
+This file is used to list changes made in each version of the selenium-chromedriver cookbook.
 
 0.1.0
 -----
-- [Lonnie VanZandt] - Initial release of chocolatey-chrome
+- [Lonnie VanZandt] - Initial release of selenium-chromedriver
 
 - - -
 Check the [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/syntax) for help with Markdown.

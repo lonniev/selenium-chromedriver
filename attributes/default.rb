@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: chocolatey-chromedriver
+# Cookbook Name:: selenium-chromedriver
 # Recipe:: default
 #
 # Copyright 2014, Lonnie VanZandt lonniev@gmail.com
