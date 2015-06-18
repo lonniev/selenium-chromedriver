@@ -17,8 +17,13 @@
 # limitations under the License.
 #
 
-chef_gem "selenium-webdriver" 
-chef_gem "chromedriver-helper"
+chef_gem "selenium-webdriver" do
+  compile_time false
+end
+
+chef_gem "chromedriver-helper" do
+  compile_time false
+end
 
 chefPath = Pathname( "/opscode/chef/embedded/bin" ).realpath()
 zipFile = "chromedriver_win32.zip"
